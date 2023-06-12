@@ -1,12 +1,17 @@
 import express from 'express';
 import helmet from 'helmet';
 import bodyParser from 'body-parser';
+import { routes } from './routes';
 
 const app = express();
 
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(() => {});
+for (const { method, path, handler } of routes) {
+  app[method](path, handler);
+}
 
-app.get('/', () => {});
+app.listen(8888, () => {
+  console.log(`Your app ruuning at http://localhost:8888`);
+});

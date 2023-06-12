@@ -16,8 +16,14 @@
     "incremental": true,
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "allowArbitraryExtensions": true,
+    "allowImportingTsExtensions": true,
+  
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "esm": true
+  }
 }

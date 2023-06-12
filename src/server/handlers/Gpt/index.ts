@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from 'openai';
 import { NextFunction, Request, Response } from 'express';
-import CONFIG from '../../../../local.env.json';
 import { GPTHandlerRequestQuery } from '../../types';
+import CONFIG from '../../../../local.env.json' assert { type: 'json' };
 
 const parseRequestQuery = (req: Request) => {
   const query = req.query;
