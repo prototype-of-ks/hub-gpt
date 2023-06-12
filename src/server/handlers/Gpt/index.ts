@@ -33,10 +33,7 @@ async function handler(req: Request, res: Response, next: NextFunction) {
       max_tokens: 50,
     });
 
-    res.json({
-      status: 'success',
-      data: openaiResponse.data,
-    });
+    res.status(200).send(openaiResponse.data);
   } catch (e) {
     res.json({
       status: 'failure',
